@@ -1,0 +1,3 @@
+# memory
+if you are building it trough pyinstaller make sure u use spec instead of py cause it will make single exe file with all dependency pictures inside, but...
+IMPORTANT before you do that change spec file so it is your path inside
