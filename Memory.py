@@ -20,7 +20,7 @@ dog = [resource_path(f'dog{i}.PNG') for i in range(1,10)]
 cat = [resource_path(f'cat{i}.PNG') for i in range(1,10)]
 polja = cat + dog
 polja = [im.open(i) for i in polja]
-var1, var2 = 140,126
+var1, var2 = 136,137
 for i in range(len(polja)): polja[i] = polja[i].resize((var1,var2))
 for i in range(len(polja)):
     with b() as output:
@@ -33,7 +33,7 @@ def wait_match(s, win):
         #sleep(1.5)
         win.write_event_value('match','')
 def wait_unmatch(s, win):
-        sleep(1.5)
+        sleep(1)
         win.write_event_value('unmatch','')
 def window(polja):
     c = 0
@@ -43,7 +43,7 @@ def window(polja):
     prva, druga = '','!'
     list_key = [str(i+1) for i in range(36)]
     img_box = [sg.Image(polja[i], visible = False, key = f'img{i+1}') for i in range(36)]
-    button = [sg.Button(' ', visible = True, size=(16,8), key = f'{i+1}') for i in range(36)]
+    button = [sg.Button(' ', visible = True, size=(10,5), key = f'{i+1}') for i in range(36)]
     column_all = [sg.Column([[i,j]]) for i, j in zip(button, img_box)]
     layout = [column_all[i:i+6] for i in range(0,36,6)]
     layout = layout + [[sg.Button('Nova igra', font=('Verdana', 18),size=(10,2),key='nova')],[sg.Text('', font=('Courier',25),key='greske')]]
