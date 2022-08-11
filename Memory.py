@@ -43,7 +43,7 @@ def window(polja):
     prva, druga = '','!'
     list_key = [str(i+1) for i in range(36)]
     img_box = [sg.Image(polja[i], visible = False, key = f'img{i+1}') for i in range(36)]
-    button = [sg.Button(' ', visible = True, size=(10,5), key = f'{i+1}') for i in range(36)]
+    button = [sg.Button(' ', visible = True, size=(16,8), key = f'{i+1}') for i in range(36)]
     column_all = [sg.Column([[i,j]]) for i, j in zip(button, img_box)]
     layout = [column_all[i:i+6] for i in range(0,36,6)]
     layout = layout + [[sg.Button('Nova igra', font=('Verdana', 18),size=(10,2),key='nova')],[sg.Text('', font=('Courier',25),key='greske')]]
